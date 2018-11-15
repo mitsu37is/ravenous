@@ -16,11 +16,15 @@ class App extends React.Component {
     }
 
     searchYelp(term, location, sortBy) {
-        Yelp.search(term, location, sortBy).then(businesses => {
-            this.setState({
-                businesses: businesses
-            })
-        });
+        if (term !== '' && location !== '') {
+            Yelp.search(term, location, sortBy).then(businesses => {
+                this.setState({
+                    businesses: businesses
+                })
+            });
+        } else {
+            alert('検索したいものと場所を入力してくだされ〜');
+        }
     }
 
     render() {

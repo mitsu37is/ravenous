@@ -53,6 +53,10 @@
     font-weight: 500;
 }
 
+.SearchBar-fields input:invalid {
+    border: 2px solid #cca353;
+}
+
 .SearchBar-fields input:last-child {
     margin-right: 0;
 }
