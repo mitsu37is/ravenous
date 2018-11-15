@@ -48,6 +48,12 @@ class SearchBar extends React.Component {
         });
     }
 
+    onKeyPress(e) {
+        if (e.key === 'Enter') {
+            this.handleSearch();
+        }
+    }
+
     handleSearch() {
         this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     }
@@ -68,8 +74,8 @@ class SearchBar extends React.Component {
                     </ul>
                 </div>
                 <div className="SearchBar-fields">
-                    <input placeholder="Search Businesses" onChange={this.handleTermChange} required />
-                    <input placeholder="Where?" onChange={this.handleLocationChange} required />
+                    <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={(e) => {this.onKeyPress(e)}} required />
+                    <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={(e) => {this.onKeyPress(e)}} required />
                 </div>
                 <div className="SearchBar-submit">
                     <button onClick={this.handleSearch}>Let's Go</button>
