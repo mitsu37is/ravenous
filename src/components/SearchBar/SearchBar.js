@@ -74,11 +74,11 @@ class SearchBar extends React.Component {
                     </ul>
                 </div>
                 <div className="SearchBar-fields">
-                    <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={(e) => {this.onKeyPress(e)}} required />
-                    <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={(e) => {this.onKeyPress(e)}} required />
+                    <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={(e) => {this.onKeyPress(e)}} required className="w-64 lg:w-2/5 border-2 border-orange-dark rounded" />
+                    <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={(e) => {this.onKeyPress(e)}} required className="w-64 lg:w-2/5 border-2 border-orange-dark rounded" />
                 </div>
                 <div className="SearchBar-submit">
-                    <button onClick={this.handleSearch}>Let's Go</button>
+                    <button onClick={this.handleSearch} className="bg-orange-dark hover:bg-orange text-white font-bold py-2 px-4 rounded-full">Let's Go</button>
                 </div>
             </div>
         );
